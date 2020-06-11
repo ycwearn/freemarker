@@ -1,5 +1,5 @@
 
-#Demo of Template Engine - FreeMarker
+# Demo of Template Engine - FreeMarker
 
 [Apache FreeMarker™](https://freemarker.apache.org/) is a template engine: a Java library to generate text output (HTML web pages, e-mails, configuration files, source code, etc.)
 
