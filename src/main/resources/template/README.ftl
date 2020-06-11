@@ -1,5 +1,6 @@
+<#ftl output_format="plainText">
 
-#Demo of Template Engine - FreeMarker
+#Demo of Template Engine - ${templateEngine}
 
 [Apache FreeMarker™](https://freemarker.apache.org/) is a template engine: a Java library to generate text output (HTML web pages, e-mails, configuration files, source code, etc.)
 
@@ -40,44 +41,43 @@ Combine the template and data model and write it to file
 Use the **#ftl output_format** to specify the output file format.
 
 ```
-<#ftl output_format="plainText">
+${r'<#ftl output_format="plainText">'}
 ```
 
 ### Looping though a collections
 ```
-<#list personList as person>
-${person.name} | ${person.gender} | ${person.age}
-</#list>
+${r"<#list personList as person>"}
+${r"${person.name} | ${person.gender} | ${person.age}"}
+${r"</#list>"}
 ```
 
 Output:
 ```
 Name           | Gender           | Age
 -------------- | ---------------- | -------------
-Olivia         | FEMALE           | 15
-Oliver         | MALE             | 15
-Amelia         | FEMALE           | 25
-George         | MALE             | 25
-Isla           | FEMALE           | 35
-Harry          | MALE             | 35
+<#list personList as person>
+${person.name?right_pad(14)} | ${person.gender?right_pad(16)} | ${person.age}
+</#list>
 ```
 
 ### Conditional if
 ```
-<#list personList as person>
+${r"<#list personList as person>
 <#if person.gender == 'FEMALE'>
 ${person.name?right_pad(14)} | ${person.age}
 </#if>
-</#list>
+</#list>"}
 ```
 
 Output :
 ```
 Name           | Age
 -------------- | -------------
-Olivia         | 15
-Amelia         | 25
-Isla           | 35
+<#list personList as person>
+<#if person.gender == 'FEMALE'>
+${person.name?right_pad(14)} | ${person.age}
+</#if>
+</#list>
 ```
 
 ### Build-in Function
@@ -86,19 +86,16 @@ FreeMarker also support build-in formatting functions. Refer to [this](https://f
 Below is an example to format the text using **lower_case**:
 
 ```
-<#list personList as person>
-${person.name?right_pad(14)} | ${person.gender?lower_case}
-</#list>
+${r"<#list personList as person>"}
+${r"${person.name?right_pad(14)} | ${person.gender?lower_case}"}
+${r"</#list>"}
 ```
 
 Output:
 ```
 Name           | Gender
 -------------- | ----------------
-Olivia         | female
-Oliver         | male
-Amelia         | female
-George         | male
-Isla           | female
-Harry          | male
+<#list personList as person>
+${person.name?right_pad(14)} | ${person.gender?lower_case}
+</#list>
 ```
