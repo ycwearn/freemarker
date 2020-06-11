@@ -1,2 +1,2 @@
-# freemarker
+# Freemarker Demo
 Sample Freemarker Project
