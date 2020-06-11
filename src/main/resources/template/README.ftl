@@ -1,5 +1,4 @@
 <#ftl output_format="plainText">
-
 # Demo of Template Engine - ${templateEngine}
 
 [Apache FreeMarker™](https://freemarker.apache.org/) is a template engine: a Java library to generate text output (HTML web pages, e-mails, configuration files, source code, etc.)
@@ -7,6 +6,8 @@
 ![FreeMarker Overview](https://freemarker.apache.org/images/overview.png)
 
 Another alternative templating engine is [Thymeleaf](https://www.thymeleaf.org/) which is more commonly used for HTML DOM templating.
+
+In this example project, a README.ftl template is used to generate the repository README.md file using FreeMarker template engine.
 
 ## Basic Usage:
 
